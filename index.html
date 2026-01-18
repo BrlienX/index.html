@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>brlienX | خدمات FRP و IMEI</title>
+  <title>BrlienX FRP. Online | خدمات FRP و IMEI</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -92,3 +92,170 @@
 <script src="script.js"></script>
 </body>
 </html>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #000;
+  color: #fff;
+  direction: rtl;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+header {
+  background: #111;
+  padding: 15px 0;
+  border-bottom: 3px solid #00eaff;
+  text-align: center;
+}
+
+header nav a {
+  color: #00eaff;
+  margin: 0 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.hero {
+  padding: 60px 0;
+  background: linear-gradient(90deg, #000, #111);
+  text-align: center;
+  border-bottom: 2px solid #00eaff;
+}
+
+.hero h2 {
+  font-size: 2em;
+  color: #00eaff;
+}
+
+.hero p {
+  margin-top: 10px;
+  color: #ccc;
+}
+
+section h3 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #00ffcc;
+  text-align: center;
+}
+
+.service-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background: #111;
+  padding: 20px;
+  border: 2px solid #00eaff;
+  width: 30%;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  background: #000;
+  transform: scale(1.05);
+}
+
+.service-card h4 {
+  color: #0ff;
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  font-size: 0.95em;
+  color: #ccc;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 14px;
+  background: #111;
+  border: 2px solid #00eaff;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+form label {
+  font-size: 0.9em;
+  color: #00eaff;
+}
+
+form input,
+form select {
+  padding: 10px;
+  border: 1px solid #00eaff;
+  border-radius: 4px;
+  background: #000;
+  color: #fff;
+}
+
+form button {
+  padding: 12px;
+  background: #00eaff;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+form button:hover {
+  background: #00ccff;
+}
+
+#orderMessage {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.1em;
+  color: #0f0;
+}
+
+footer {
+  text-align: center;
+  padding: 14px;
+  margin-top: 30px;
+  border-top: 2px solid #00eaff;
+  font-size: 0.9em;
+}
+
+document.getElementById("orderForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let name = document.getElementById("fullName").value;
+  let email = document.getElementById("email").value;
+  let phone = document.getElementById("phone").value;
+  let service = document.getElementById("serviceType").value;
+  let device = document.getElementById("deviceNumber").value;
+  let payment = document.getElementById("paymentMethod").value;
+
+  let message = `
+  ✅ تم استلام طلبك بنجاح!
+
+  🛠️ الخدمة المطلوبة: ${service}
+  📱 الجهاز / IMEI: ${device}
+  💰 طريقة الدفع: ${payment}
+  📧 سنتواصل معك عبر البريد: ${email}
+  📞 أو عبر واتساب على: ${phone}
+  `;
+
+  document.getElementById("orderMessage").textContent = message;
+
+  // (إضافة إرسال لبريد أو خدمة واتساب ممكن لاحقاً)
+});
