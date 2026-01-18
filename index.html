@@ -1,42 +1,94 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>BerlinX FRP</title>
-<style>
-body {
-  font-family: Arial;
-  background: #0f172a;
-  color: white;
-  text-align: center;
-  padding-top: 80px;
-}
-.box {
-  background: #111827;
-  padding: 30px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 400px;
-  margin: auto;
-}
-button {
-  background: #22c55e;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>brlienX | خدمات FRP و IMEI</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="box">
-  <h1>BerlinX FRP</h1>
-  <p>Samsung • iPhone • Xiaomi</p>
-  <p>خدمة FRP & iCloud</p>
-  <button>تواصل واتساب</button>
-</div>
+<header>
+  <div class="container">
+    <h1>brlienX</h1>
+    <nav>
+      <a href="#services">الخدمات</a>
+      <a href="#order">اطلب الخدمة</a>
+      <a href="#contact">تواصل</a>
+    </nav>
+  </div>
+</header>
 
+<section class="hero">
+  <div class="container">
+    <h2>أفضل خدمات FRP و IMEI أونلاين</h2>
+    <p>خدمات مفتوحة لجميع الأجهزة بسهولة وأمان.</p>
+  </div>
+</section>
+
+<section id="services" class="container">
+  <h3>خدماتنا</h3>
+  <div class="service-list">
+    <div class="service-card">
+      <h4>فتح FRP</h4>
+      <p>فتح قفل FRP لجميع أنواع أجهزة الأندرويد.</p>
+    </div>
+    <div class="service-card">
+      <h4>IMEI Unlock</h4>
+      <p>فتح الشبكة عبر IMEI لجميع الأجهزة.</p>
+    </div>
+    <div class="service-card">
+      <h4>خدمات عن بُعد</h4>
+      <p>حل مشاكل الجهاز مباشرة عن بُعد خلال دقائق.</p>
+    </div>
+  </div>
+</section>
+
+<section id="order" class="container">
+  <h3>اطلب الخدمة الآن</h3>
+  <form id="orderForm">
+    <label>الاسم الكامل:</label>
+    <input type="text" id="fullName" required />
+
+    <label>البريد الإلكتروني:</label>
+    <input type="email" id="email" required />
+
+    <label>رقم الواتساب:</label>
+    <input type="text" id="phone" required />
+
+    <label>نوع الخدمة:</label>
+    <select id="serviceType" required>
+      <option value="FRP">فتح FRP</option>
+      <option value="IMEI Unlock">IMEI Unlock</option>
+      <option value="Remote">خدمة عن بعد</option>
+    </select>
+
+    <label>رقم IMEI / الجهاز:</label>
+    <input type="text" id="deviceNumber" required />
+
+    <label>طريقة الدفع:</label>
+    <select id="paymentMethod" required>
+      <option value="bankak">بنكك</option>
+      <option value="binance">Binance</option>
+      <option value="mtnmomo">MTN MoMo - جنوب السودان</option>
+    </select>
+
+    <button type="submit">إرسال الطلب</button>
+  </form>
+
+  <div id="orderMessage"></div>
+</section>
+
+<section id="contact" class="container">
+  <h3>تواصل معنا</h3>
+  <p>📧 البريد: <a href="mailto:bebew8727@gmail.com">bebew8727@gmail.com</a></p>
+  <p>📞 الرقم: <a href="tel:+211928881435">+211928881435</a></p>
+</section>
+
+<footer class="container">
+  <p>© 2025 brlienX.frp.co - جميع الحقوق محفوظة</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
